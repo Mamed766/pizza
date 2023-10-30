@@ -58,7 +58,6 @@ function App() {
 }
 
 function Header() {
-  // const style = { color: "red", fontSize: "48px", textTransform: "uppercase" };
   const style = {};
 
   return (
@@ -99,20 +98,12 @@ function Menu() {
 function Pizza({ pizzaObj }) {
   console.log(pizzaObj);
 
-  // if (pizzaObj.soldOut) return null;
-
   return (
     <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
         <h3>{pizzaObj.name}</h3>
         <p>{pizzaObj.ingredients}</p>
-
-        {/* {pizzaObj.soldOut ? (
-          <span>SOLD OUT</span>
-        ) : (
-          <span>{pizzaObj.price}</span>
-        )} */}
 
         <span>{pizzaObj.soldOut ? "SOLD OUT" : pizzaObj.price}</span>
       </div>
@@ -152,13 +143,9 @@ function Order({ closeHour, openHour }) {
   );
 }
 
-// React v18
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-// React before 18
-// ReactDOM.render(<App />, document.getElementById("root"));
